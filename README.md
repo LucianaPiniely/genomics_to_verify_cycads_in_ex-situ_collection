@@ -1,3 +1,6 @@
+Using Genomics to verify cycads in Ex situ collection
+Case study: Tanzanian cycads
+
 Ex situ collections are critical for cycad conservation, but their value depends on correct species identification. Older accessions, confiscated material, and hobbyist donations often have incomplete records and outdated nomenclature, and cycads are hard to identify morphologically because they take years to produce cones and vegetative characters overlap among close relatives.
 
 In this project we used Tanzanian Encephalartos as a model to test whether target-enrichment data can verify species labels and detect mislabeled accessions.

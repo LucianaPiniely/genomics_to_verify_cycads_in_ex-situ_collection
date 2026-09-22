@@ -1,0 +1,116 @@
+######################################################
+### Configuration File for all HybPhaser R scripts ###
+######################################################
+
+# General settings
+path_to_output_folder = "/home/plm2976/HybPhaser_output"
+fasta_file_with_targets = "/home/plm2976/trimmed_reads_Encephalartos/targetencephalartos.fa"
+targets_file_format = "DNA"    # "DNA" or "AA" 
+path_to_namelist = "/home/plm2976/trimmed_reads_Encephalartos/namefile_gardenonly.txt"
+intronerated_contig = "no"    
+
+
+###############################
+### Part 1:  SNP Assessment ###
+###############################
+
+name_for_dataset_optimization_subset = "filtered" 
+
+# missing data
+remove_samples_with_less_than_this_propotion_of_loci_recovered = .2
+remove_samples_with_less_than_this_propotion_of_target_sequence_length_recovered = .3
+remove_loci_with_less_than_this_propotion_of_samples_recovered = .2
+remove_loci_with_less_than_this_propotion_of_target_sequence_length_recovered = .2
+##lowered filters for target sequence length recovered because we find it less important that our sequences match the targets well, more important that we get good proportion of sequences recovered.
+# Paralogs 
+remove_loci_for_all_samples_with_more_than_this_mean_proportion_of_SNPs = "outliers"   # any number between 0 and 1, "none" or  "outliers" 
+file_with_putative_paralogs_to_remove_for_all_samples = ""
+remove_outlier_loci_for_each_sample = "yes"       
+
+###############################
+### Part 1:  SNP Assessment ###
+###############################
+
+name_for_dataset_optimization_subset = "filtered" 
+
+# missing data
+remove_samples_with_less_than_this_propotion_of_loci_recovered = 0.2
+remove_samples_with_less_than_this_propotion_of_target_sequence_length_recovered = 0.3
+remove_loci_with_less_than_this_propotion_of_samples_recovered = 0.2
+remove_loci_with_less_than_this_propotion_of_target_sequence_length_recovered = 0.2
+
+# Paralogs 
+remove_loci_for_all_samples_with_more_than_this_mean_proportion_of_SNPs = "outliers"   # any number between 0 and 1, "none" or  "outliers" 
+file_with_putative_paralogs_to_remove_for_all_samples = ""
+remove_outlier_loci_for_each_sample = "yes"       
+
+
+
+##################################
+### Part 2:  Clade Association ###
+##################################
+
+# set variables to determine thresholds for the dataset optimization and run the script from the main script
+
+path_to_clade_association_folder = "/home/plm2976/HybPhaser_output/04_clade_association"
+csv_file_with_clade_reference_names = "/home/plm2976/HybPhaser_output/clade_reference.csv"
+path_to_reference_sequences = "/home/plm2976/HybPhaser_output/03_sequence_lists_Encephalartos_2026/samples_consensus"
+path_to_read_files_cladeassociation = "/home/plm2976/HybPhaser_output/mapped_reads"
+read_type_cladeassociation = "single-end" 
+ID_read_pair1 = ""
+ID_read_pair2 = ""
+file_with_samples_included = ""
+
+path_to_bbmap = "/home/plm2976/miniconda3/bin"
+no_of_threads_clade_association = "auto"
+run_clade_association_mapping_in_R = "yes"   
+java_memory_usage_clade_association = "128G"    # e.g. 2G (for 2GB) needed when java -Xmx error comes up. should be max. 85% of physical memory
+
+
+
+#######################
+### Part 3: Phasing ###
+#######################
+
+# set variables and direct the scripts to the right folders and files before running the single scripts (from inside this file)
+
+path_to_phasing_folder = "/data/labs/Fant/Quigg/03e.hybpiper/03.hybphaser1/05_phasing"
+csv_file_with_phasing_prep_info = "/data/labs/Fant/Quigg/03e.hybpiper/03.hybphaser1/phasing_table_clean.csv"
+path_to_read_files_phasing = "/data/labs/Fant/Quigg/03e.hybpiper/01.trimmed/trimmed_for_hybphaser"
+read_type_4phasing = "paired-end"   
+ID_read_pair1 = "_R1_paired.fastq.gz"    # e.g. "_R1_paired.fastq.gz"
+ID_read_pair2 = "_R2_paired.fastq.gz"    # e.g. "_R2_paired.fastq.gz"
+reference_sequence_folder = "/data/labs/Fant/Quigg/03e.hybpiper/03.hybphaser1/03_sequence_lists_tetra_1062025/samples_consensus"
+folder_for_phased_reads = ""
+folder_for_phasing_stats = ""
+path_to_bbmap_executables = "/home/plm2976/miniconda3/bin"
+no_of_threads_phasing = "auto" 
+java_memory_usage_phasing = "128G"    # e.g. 2G (for 2GB) needed when java -Xmx error comes up. should be max. 85% of physical memory
+run_bash_script_in_R = "yes"      
+
+
+
+################################
+### Part 4: Merging Datasets ###
+################################
+
+# This script is to generate sequence lists that combine the phased sequences with the normal non-phased ones (but exclude the normal ones of the phased accessions)
+# It is also possible to make subsets of samples or loci using lists of included or excluded samples/loci
+
+path_to_sequence_lists_normal = ""
+path_to_sequence_lists_phased = ""
+path_of_sequence_lists_output = ""
+
+path_to_namelist_normal = ""
+path_to_namelist_phased = ""
+
+# to generate subsets one can chose to define samples that are either included or excluded 
+file_with_samples_included = ""   
+file_with_samples_excluded = ""
+
+# Similarly one can choose to exclude loci or use a list with only the included loci. 
+file_with_loci_excluded = ""
+file_with_loci_included = ""
+
+exchange_phased_with_not_phased_samples = "yes"   # "yes" or "no" 
+include_phased_seqlists_when_non_phased_locus_absent = "no"  # "yes" or "no"

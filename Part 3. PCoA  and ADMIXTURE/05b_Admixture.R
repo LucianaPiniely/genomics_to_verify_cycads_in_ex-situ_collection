@@ -194,3 +194,4 @@ p_k6_pruned <- ggplot(q6_pruned_long, aes(x = sample, y = proportion, fill = clu
 print(p_k6_pruned)
 ggsave("admixture_K6_allsamples.png", plot = p_k6_pruned, width = 16, height = 7, dpi = 300, bg = "white")
 
+#END

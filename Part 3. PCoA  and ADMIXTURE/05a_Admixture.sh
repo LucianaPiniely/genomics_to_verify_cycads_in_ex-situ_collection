@@ -37,3 +37,4 @@ done > all_cv_errors.txt
 
 #we compared our k value the pick our best fit data
 #Eventually the final visualization were K=4 ("gardenonly_pruned_clean_maf01_K5_rep3.Q"), K=5 ("gardenonly_pruned_clean_maf01_K5_rep3.Q") and K=6 ("gardenonly_pruned_clean_maf01_K6_rep7.Q")
+#END

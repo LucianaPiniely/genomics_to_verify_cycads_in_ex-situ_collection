@@ -32,4 +32,5 @@ done
 #In our dataset the problem is each VCF file has the same sample names but different loci — bcftools merge treats them as different samples.
 #So we used a python script for merging (vcf_merging.py)
 
+#END
 

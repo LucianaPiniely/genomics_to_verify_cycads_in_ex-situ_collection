@@ -68,5 +68,5 @@ new_gts = '\t'.join(gt_map[s] for s in samples)
 out.write(f'{locus}\t{pos}\t.\t{ref}\t{alt}\t.\t.\t.\tGT\t{new_gts}\n')
 
 EOF
-
 #The next step is to convert merged VCF to PLINK format (plink_format.sh)
+#END

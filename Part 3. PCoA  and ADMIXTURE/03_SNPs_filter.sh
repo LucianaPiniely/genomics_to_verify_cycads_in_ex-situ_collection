@@ -30,3 +30,4 @@ wc -l < gardenonly_pruned.bim
 #For dataset 2, gardenonly_pruned_subset.bed, gardenonly_pruned_subset.bim, gardenonly_pruned_subset.fam.
 #we gona use for PCoA and ADMIXTURE
 
+#END

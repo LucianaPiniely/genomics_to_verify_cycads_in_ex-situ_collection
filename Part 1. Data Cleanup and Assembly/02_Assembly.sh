@@ -1,4 +1,4 @@
-##Installing HybPiper 2
+#Installing HybPiper 2
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
@@ -10,12 +10,9 @@ conda create --name hybpiper -c chrisjackson-pellicle hybpiper
 conda activate hybpiper
 
 #Prepare reference file
-##GoFlag bait file
+#GoFlag bait file
 #To create this custom reference file create this script using nano command and name it extract_sequences.sh
-
-#!/bin/bash
-
-###Insert the taxon name for your reference of interest between the first two "/   /"
+#Insert the taxon name for your reference of interest between the first two "/   /"
 
 awk '/Encephalartos_barteri/ {print; getline; print}' combinedTarget.fasta > ref_seq.fasta
 
@@ -24,7 +21,7 @@ sed -E "s/>L([0-9]*)_.*_.*_(.*_.*)_[1-2]__REF/>\2-\1/g" ref_seq.fasta > target.f
 rm ref_seq.fasta
 
 
-##we included the unpaired reads into HybPiper's assembly,
+#we included the unpaired reads into HybPiper's assembly,
 #you need to concatenate the two files together (combine them into one file).
 #To concatenate the unpaired files for each sample:
 for file in *R1_unpaired*
@@ -77,7 +74,7 @@ chmod +x assemble.sh
 #run the script
 sbatch slurmAssemble.sh
 
-##SUMMARY STATISTICS
+#SUMMARY STATISTICS
 #make a namefile for the assembled data
 for i in *R1_paired.fastq.gz
 do

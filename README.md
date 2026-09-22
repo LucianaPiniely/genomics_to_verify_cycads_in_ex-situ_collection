@@ -32,4 +32,4 @@ The main thing we noted here is that after SNPs calling, each locus was represen
  We did Hybphser analysis to see if these individuals were hybrids
  All scripts on Part 4 folder
 
-
+Most of these scripts are modified versions from my lab mates!! Super cool

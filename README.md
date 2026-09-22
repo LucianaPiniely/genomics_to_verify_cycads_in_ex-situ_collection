@@ -25,4 +25,5 @@ Scripts on Part 2 folder
 We then used the clean alignments to estimate PCoA and admixture
 The main thing we noted here is that after SNPs calling, each locus was represented by its own VCF file. The next step was to merge these files into a single VCF. Instead of using bcftools merge which is commonly used , in our case its wasn't suitable for our dataset. Each locus-specific VCF contained the same set of sample names, but different genomic loci. So we customized the Python script (vcf_merging.py). The script maintained a single copy of each sample, extracted variants from every locus-specific VCF, and merged them into a one file while preserving the correct sample identities across loci. 
  So we used this merged VCF provided and do the filtering using then estimates PCoA and ADMIXTURE.
+ We also accessed whether the admixture we observed suggest hybridization.
  All scripts for this part are under Part 3 folder
